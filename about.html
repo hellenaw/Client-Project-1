@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Bootstrap Project</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="assets/js/app.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+      body {
+        margin-top: 10%;
+        background-color: #f9e26c !important;
+      }
+    </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #f9e26c; border-bottom: 2px solid black;">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="index.html">Nibble</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-bold me-4" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold me-4 active" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold me-4" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="build-a-bowl.html">Build-a-Bowl</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <main class="container my-5 position-relative">
+        <div class="banner-cat my-5 position-relative">
+        <!-- Banner Section -->
+        <div class="banner p-5">
+            <div class="banner-text">
+                <h1 class="fw-bold display-1 text-uppercase text-black">Healthier Cats</h1>
+                <h1 class="fw-bold display-1 text-uppercase text-black"> Start with Nibble.</h1>
+            </div>
+        </div>
+        <!-- Cat Image -->
+        <img src="assets/media/banner2.png" alt="Cat" class="cat-img position-absolute d-none d-md-block"
+            style="bottom: -80px; right: 0px; width: 450px; height: auto; z-index: 1;">
+        </div>
+
+        <section class="py-5">
+          <div class="container">
+            <h2 class="fw-bold mb-4 text-uppercase" style="color: #eb5a79;">How it all started</h2>
+            <div class="row align-items-center">
+              <!-- Image Column -->
+              <div class="col-md-6">
+                <img src="assets/media/team.jpg" alt="Team Photo" class="img-fluid rounded" style="border: 2px solid black;">
+              </div>
+              <!-- Text Column -->
+              <div class="col-md-6">
+                <div class="p-4" style="background-color: #f9e26c; border-radius: 15px;">
+                  <h2 class="fw-bold mb-3">More Than a Pet, More Than a Cat</h2>
+                  <p class="small mb-3" style="font-size: 1.1rem;">
+                    It all started in a tiny apartment with two best friends, Sarah and Landon, who couldn’t find healthy, natural food for their rescue cats. Determined to make a difference, they crafted recipes in their own kitchen, blending wholesome ingredients their cats loved. Today, that passion has grown into Nibble—a brand for cat lovers by cat lovers.
+                  </p>
+                  <p class="text-muted small">By Nibble Team</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-5">
+          <div class="container">
+            <div class="row">
+              <!-- Text Column -->
+              <div class="col-md-6 d-flex flex-column justify-content-center">
+                <h2 class="fw-bold mb-3">Cats Deserve the Best</h2>
+                <p class="text-muted mb-4" style="font-size: 1.1rem;">
+                  Every cat brings unique joy to our lives. They're our companions, confidants, and part of our families. That’s why we’re dedicated to making life better for every cat, ensuring they have access to proper care, nutritious food, and a loving environment. Because a happy cat means a happy home.
+                </p>
+                <p class="text-muted" style="font-size: 1.1rem;">
+                  Join us in celebrating the special bond we share with our feline friends and helping every cat live their best life.
+                </p>
+              </div>
+              <!-- Image Column -->
+              <div class="col-md-6">
+                <img src="assets/media/pink-bg.jpg" alt="Happy Cat" class="img-fluid rounded shadow-sm" style="border: 2px solid black;">
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <section class="py-5" style="background-color: #f9f9f0; border-radius: 15px; border: 2px solid black; margin-top: 80px;">
+          <div class="container text-center" style="padding: 20px;">
+              <!-- Title -->
+              <h2 class="fw-bold mb-3">Gently Cooked Food Developed with Your Cat’s Biology in Mind</h2>
+              <p class="mb-5 px-4"> <!-- Added 'px-4' for horizontal padding -->
+                Your feline companion has ancestors that thrived in desert environments, feasting on live prey. While they may now be smaller and more affectionate, they still require fresh, protein-rich meals to stay healthy and thrive.
+              </p>
+              <!-- Features Section -->
+              <div class="row justify-content-center">
+                  <!-- Feature 1 -->
+                  <div class="col-md-3 mb-4">
+                      <div class="p-3 rounded shadow-sm" style="background-color: #c1cbdc; border: 2px solid black; border-radius: 15px;">
+                          <div class="d-flex align-items-center justify-content-between">
+                              <img src="assets/media/cat-eating.jpg" alt="Packed with Protein" class="img-fluid me-2" style="width: 40px;">
+                              <p class="fw-bold mb-0 me-auto">Packed with Protein</p>
+                              <a class="btn text-secondary text-decoration-none fw-normal p-0" data-bs-toggle="collapse" href="#feature1" role="button" aria-expanded="false" aria-controls="feature1">More</a>
+                          </div>
+                          <div class="collapse mt-2" id="feature1">
+                              <p class="text-muted">Our recipes contain a minimum of 80% animal proteins, providing your cat with essential nutrients and vitamins to support strong muscles and healthy bones.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Feature 2 -->
+                  <div class="col-md-3 mb-4">
+                      <div class="p-3 rounded shadow-sm" style="background-color: #d9e7c8; border: 2px solid black; border-radius: 15px;">
+                          <div class="d-flex align-items-center justify-content-between">
+                              <img src="assets/media/cat-eating.jpg" alt="Gently Cooked" class="img-fluid me-2" style="width: 40px;">
+                              <p class="fw-bold mb-0 me-auto">Gently Cooked</p>
+                              <a class="btn text-secondary text-decoration-none fw-normal p-0" data-bs-toggle="collapse" href="#feature2" role="button" aria-expanded="false" aria-controls="feature2">More</a>
+                          </div>
+                          <div class="collapse mt-2" id="feature2">
+                              <p class="text-muted">Our fresh food is carefully cooked to 167°F (75°C) to retain essential nutrients, natural flavors, and ingredients while ensuring it’s safe and free from harmful pathogens.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Feature 3 -->
+                  <div class="col-md-3 mb-4">
+                      <div class="p-3 rounded shadow-sm" style="background-color: #f5c7a9; border: 2px solid black; border-radius: 15px;">
+                          <div class="d-flex align-items-center justify-content-between">
+                              <img src="assets/media/cat-eating.jpg" alt="Preservative-Free" class="img-fluid me-2" style="width: 40px;">
+                              <p class="fw-bold mb-0 me-auto">Preservative-Free</p>
+                              <a class="btn text-secondary text-decoration-none fw-normal p-0" data-bs-toggle="collapse" href="#feature3" role="button" aria-expanded="false" aria-controls="feature3">More</a>
+                          </div>
+                          <div class="collapse mt-2" id="feature3">
+                              <p class="text-muted">Unlike other cat food brands that rely on preservatives like BHA and BHT, our food is cooked and frozen to lock in freshness, so there’s no need for any artificial additives.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Call-to-Action Button -->
+              <div class="mt-5">
+                  <a href="products.html" class="btn fw-bold px-5 py-3" style="background-color: #f9e26c; color: black; border: 2px solid black;">Check It Out</a>
+                  <p class="mt-2 text-muted">💰 100% Money-back guarantee</p>
+              </div>
+          </div>
+        </section>
+
+        <!--    CUSTOMER REPORTS    -->
+  <section class="py-5 mt-5" style="background-color: #f5c7a9; border-radius: 15px; border: 2px solid black;">
+    <div class="container text-center">
+      <!-- Section Header -->
+      <h2 class="fw-bold mb-5">→ 89% of our customers see health improvements after switching to Nibble</h2>
+      <div class="row p-4">
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card border rounded" style="background-color: #d9e7c8; border-radius: 15px; overflow: hidden;">
+            <div class="position-relative">
+              <img src="assets/media/blue-eyes.jpg" alt="Benefit 1" class="img-fluid rounded-top">
+              <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center">
+                <p class="fs-2 fw-bold mb-0">77%</p>
+                <p class="fs-6">Cats show shinier, softer fur after switching to Nibble.</p>
+              </div>
+            </div>
+            <div class="card-body rounded-bottom">
+              <h6 class="text-uppercase fw-bold text-muted mb-2">Benefit #1</h6>
+              <p class="text-muted">A well-balanced diet reduces shedding, minimizes hairballs, and enhances fur softness.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card border rounded" style="background-color: #c1cbdc; border-radius: 15px; overflow: hidden;">
+            <div class="position-relative">
+              <img src="assets/media/tail.jpg" alt="Benefit 2" class="img-fluid rounded-top">
+              <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center">
+                <p class="fs-2 fw-bold mb-0">65%</p>
+                <p class="fs-6">A cleaner litter box with less odor after introducing Nibble.
+                </p>
+              </div>
+            </div>
+            <div class="card-body rounded-bottom">
+              <h6 class="text-uppercase fw-bold text-muted mb-2">Benefit #2</h6>
+              <p class="text-muted">A higher nutrient absorption rate means less waste and a cleaner litter box.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card border rounded" style="background-color: #d9e7c8; border-radius: 15px; overflow: hidden;">
+            <div class="position-relative">
+              <img src="assets/media/right-peek.jpg" alt="Benefit 3" class="img-fluid rounded-top">
+              <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center">
+                <p class="fs-2 fw-bold mb-0">67%</p>
+                <p class="fs-6">Cats display more energy and liveliness after trying Nibble.</p>
+              </div>
+            </div>
+            <div class="card-body rounded-bottom">
+              <h6 class="text-uppercase fw-bold text-muted mb-2">Benefit #3</h6>
+              <p class="text-muted">Protein-packed meals and better hydration support strong bones and lean, toned muscles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+        <section class="py-5" style="background-color: #f9e26c;">
+          <div class="container">
+            <div class="row align-items-center">
+              <!-- Image Column -->
+              <div class="col-md-6">
+                <img src="assets/media/ingredients.jpg" alt="Fresh Ingredients" class="img-fluid rounded" style="border: 2px solid black;">
+              </div>
+              <!-- Text Column -->
+              <div class="col-md-6">
+                <p class="text-uppercase fw-bold small text-muted mb-2">Raising the Bar in Cat Nutrition Since 2020</p>
+                <h2 class="fw-bold mb-3">We Put Cats First, Always.</h2>
+                <p class="text-muted mb-4">
+                  Many cat food brands cut corners with fillers and preservatives. At Nibble, we believe your feline friends deserve only the best—natural ingredients packed with essential vitamins and nutrients to keep them happy and healthy.
+                </p>
+                <a href="products.html" class="btn btn-dark fw-bold px-4 py-2 text-uppercase">Explore Products</a>
+                <p class="mt-2 text-muted small">💰 100% Satisfaction Guarantee</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+</main>
+
+<footer class="text-center py-3" style="background-color: #f9e26c; border-top: 2px solid black;">
+  <p>&copy; 2025 Helena Markulin</p>
+</footer>
+</body>
+
+</html>

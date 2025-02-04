@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Bootstrap Project</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="assets/js/app.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+      body {
+        margin-top: 10%;
+        background-color: #f9e26c !important;
+      }
+    </style>
+
+<style>
+  .card {
+    border: 2px solid black; /* Add a prominent black border */
+    background-color: #c1cbdc; /* Set card background color */
+  }
+
+  .card:hover {
+    transform: scale(1.05); /* Enlarge slightly */
+    transition: transform 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #f9e26c; border-bottom: 2px solid black;">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="index.html">Nibble</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-bold me-4" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold me-4" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold me-4 active" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="build-a-bowl.html">Build-a-Bowl</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <main class="container my-5 position-relative">
+        <div class="banner-cat my-5 position-relative">
+        <!-- Banner Section -->
+        <div class="banner p-5">
+            <div class="banner-text">
+                <h1 class="fw-bold display-1 text-uppercase text-black">Real ingredients,</h1>
+                <h1 class="fw-bold display-1 text-uppercase text-black"> real benefits</h1>
+            </div>
+        </div>
+        <!-- Cat Image -->
+        <img src="assets/media/banner3.png" alt="Cat" class="cat-img position-absolute d-none d-md-block"
+            style="bottom: -172px; right: 10px; width: 500px; height: auto; z-index: 1;">
+        </div>
+
+
+<!--    CUSTOMIZABLE BOWL   -->
+<section class="container my-4 py-4 customizable-bowl-section"> <!-- Reduced 'my-5' to 'my-4' and 'py-5' to 'py-4' -->
+  <div class="row align-items-center">
+    <!-- Text Column -->
+    <div class="col-md-6 d-flex flex-column justify-content-center text-center">
+      <p class="text-uppercase fw-bold text-muted small mb-3">Customizable Bowl</p>
+      <h2 class="fw-bold mb-4">Build the Purrfect Meal.</h2>
+      <p class="text-muted mb-4">
+        Your cat deserves a meal as unique as they are! With our customizable bowls, you can select from a variety of wet or dry foods, savory broths, and irresistible add-ons. Mix and match to keep mealtime exciting and nutritious.
+      </p>
+      <a href="build-a-bowl.html" class="btn text-uppercase fw-bold py-2 px-4 mx-auto" 
+         style="background-color: #c1cbdc; color: black; border: 2px solid black; border-radius: 5px;">Start Building</a>
+    </div>
+    <!-- Image Column -->
+    <div class="col-md-6">
+      <img src="assets/media/bowl-paws.jpg" alt="Custom Bowl Image" class="img-fluid rounded" style="border: 2px solid black;">
+    </div>
+  </div>
+</section>
+
+
+
+ <!--    BROTHS    -->
+ <section>
+  <h2 class="card-title fw-bold mt-5 mb-4">Pour the Love</h2>
+  <h4 class="card-title mb-4">Because hydration isn’t optional – it’s delicious with our broths.</h4>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Card 1 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm rounded-3 text-center" style="border: 2px solid black; background-color: #c1cbdc;">
+          <img src="assets/media/broth.jpg" class="card-img-top img-fluid p-3" alt="Cat Treat 1">
+          <div class="card-body">
+            <p class="text-muted small">Slow cooked</p>
+            <h5 class="card-title fw-bold">Whisker-Licking Chicken</h5>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm rounded-3 text-center" style="border: 2px solid black; background-color: #f5c7a9;">
+          <img src="assets/media/broth.jpg" class="card-img-top img-fluid p-3" alt="Cat Treat 2">
+          <div class="card-body">
+            <p class="text-muted small">100% Organic</p>
+            <h5 class="card-title fw-bold">Coastal Catch Broth</h5>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm rounded-3 text-center" style="border: 2px solid black; background-color: #d9e7c8;">
+          <img src="assets/media/broth.jpg" class="card-img-top img-fluid p-3" alt="Cat Treat 3">
+          <div class="card-body">
+            <p class="text-muted small">Vet Recommended</p>
+            <h5 class="card-title fw-bold">Gobble Goodness</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--    HYDRATION MADE DELICIOUS    -->
+        <section class="container my-5 py-5">
+          <div class="row align-items-center">
+            <!-- Image Column -->
+            <div class="col-md-6">
+              <img src="assets/media/cat-pink.jpg" alt="Cat Broth Image" class="img-fluid rounded" style="border: 2px solid black;">
+            </div>
+            <!-- Text Column -->
+            <div class="col-md-6 d-flex flex-column justify-content-center text-center">
+              <h2 class="fw-bold mb-4">Hydration Made Delicious.</h2>
+              <p class="text-muted mb-4">
+                Cats often don’t drink enough water, which can lead to dehydration and health issues. Our savory cat broths come in three irresistible flavors to ensure your furry friend stays hydrated and happy. Add it to their meals or serve it on its own for a nutritious boost.
+              </p>
+            </div>
+          </div>
+        </section>
+
+
+
+       
+
+        <!--    SUBSCRIPTION    -->
+        <section class="py-5 mt-5" style="background-color: #f5c7a9; border-radius: 15px; border: 2px solid black;">
+          <div class="container text-center">
+            <!-- Section Header -->
+            <div class="mb-4">
+              <p class="text-uppercase fw-bold small text-muted">How It Works</p>
+              <h2 class="fw-bold">Sample & customize your subscription.</h2>
+              <p class="text-muted">Find out which recipe your cat purrs for most with our first box. Then, fill up your next subscription box with their favorites.</p>
+            </div>
+            <!-- Features -->
+            <div class="row justify-content-center">
+              <!-- Feature 1 -->
+              <div class="col-md-4 mb-4">
+                <div class="d-flex flex-column align-items-center">
+                  <div class="icon-circle bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; border: 2px solid black;">
+                    <img src="assets/media/check-icon.png" alt="Check Icon" class="img-fluid" style="width: 30px;">
+                  </div>
+                  <h5 class="fw-bold">Full Money Back Guarantee</h5>
+                </div>
+              </div>
+              <!-- Feature 2 -->
+              <div class="col-md-4 mb-4">
+                <div class="d-flex flex-column align-items-center">
+                  <div class="icon-circle bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; border: 2px solid black;">
+                    <img src="assets/media/check-icon.png" alt="Check Icon" class="img-fluid" style="width: 30px;">
+                  </div>
+                  <h5 class="fw-bold">Fully Customizable</h5>
+                </div>
+              </div>
+              <!-- Feature 3 -->
+              <div class="col-md-4 mb-4">
+                <div class="d-flex flex-column align-items-center">
+                  <div class="icon-circle bg-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; border: 2px solid black;">
+                    <img src="assets/media/check-icon.png" alt="Check Icon" class="img-fluid" style="width: 30px;">
+                  </div>
+                  <h5 class="fw-bold">Cancel Anytime</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+ <!--     Wet Food Section       -->
+<section class="py-5">
+  <h2 class="card-title fw-bold mt-5 mb-4">Fresh, Hydrating Wet Food</h2>
+  <h4 class="card-title mb-4">Freshly prepared, nutrient-rich wet food designed to keep them healthy and hydrated.</h4>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <!-- Card 1 -->
+      <div class="col">
+        <div class="card h-100 rounded-3 text-center">
+          <img src="assets/media/packaging.jpg" class="card-img-top img-fluid p-3" alt="Cat Treat 1">
+          <div class="card-body">
+            <h5 class="fw-bold">Creamy Chicken Feast</h5>
+            <h6 class="card-title text-muted">Tender chicken turned into a smooth, creamy delight. High in protein and hydration to keep your feline feeling their best.</h6>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col">
+        <div class="card h-100 rounded-3 text-center">
+          <img src="assets/media/packaging.jpg" class="card-img-top img-fluid p-3" alt="Cat Treat 2">
+          <div class="card-body">
+            <h5 class="fw-bold">Rustic Turkey Dinner</h5>
+            <h6 class="card-title text-muted">Ground turkey crafted into a hearty, textured recipe. Delicious and packed with protein for strong bones and muscles.</h6>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col">
+        <div class="card h-100 rounded-3 text-center">
+          <img src="assets/media/packaging.jpg" class="card-img-top img-fluid p-3" alt="Cat Treat 3">
+          <div class="card-body">
+            <h5 class="fw-bold">Chunky Ocean Catch</h5>
+            <h6 class="card-title text-muted">Ground fish and seafood blend for a flavor-packed meal with a satisfying texture. Supports joint health and hydration.</h6>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="col">
+        <div class="card h-100 rounded-3 text-center">
+          <img src="assets/media/packaging.jpg" class="card-img-top img-fluid p-3" alt="Cat Treat 4">
+          <div class="card-body">
+            <h5 class="fw-bold">Homestyle Beef Blend</h5>
+            <h6 class="card-title text-muted">Ground beef with added nutrients for a wholesome, textured meal. Perfect for cats craving a more substantial bite.</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <!--    CAT FAVES   -->
+        <section class="py-5" style="background-color: #f9f4e8; margin-top: 50px; border: 2px solid black; border-radius: 15px;"> <!-- Added 'margin-top: 80px' -->
+          <div class="container">
+            <h2 class="fw-bold text-center mb-5">Our Cat Crew & Their Favorites</h2>
+            <div id="catFoodCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+              <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active text-center">
+                  <img src="assetsmedia/cat1.jpg" class="img-fluid rounded-circle mb-4" alt="Mittens the Cat" style="width: 200px; height: 200px;">
+                  <p class="fw-bold mb-2">Wizard loves Chunky Ocean Catch and Gobble Goodness</p>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item text-center">
+                  <img src="assets/media/cat2.jpg" class="img-fluid rounded-circle mb-4" alt="Mr. Whiskers the Cat" style="width: 200px; height: 200px;">
+                  <p class="fw-bold mb-2">Faucet enjoys Crabby Crunch Puffs and Creamy Chicken Feast</p>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item text-center">
+                  <img src="assets/media/cat3.jpg" class="img-fluid rounded-circle mb-4" alt="Sir Fluffington the Cat" style="width: 200px; height: 200px;">
+                  <p class="fw-bold mb-2">Pot Roast can’t get enough of Coastal Catch Broth and Rustic Turkey Dinner</p>
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-item text-center">
+                  <img src="assets/media/cat4.jpg" class="img-fluid rounded-circle mb-4" alt="Princess Purrington the Cat" style="width: 200px; height: 200px;">
+                  <p class="fw-bold mb-2">Michael adores Tuna Tango Puffs and Whisker-Licking Chicken</p>
+                </div>
+                <!-- Slide 5 -->
+                <div class="carousel-item text-center">
+                  <img src="assets/media/cat5.jpg" class="img-fluid rounded-circle mb-4" alt="Captain Claws the Cat" style="width: 200px; height: 200px;">
+                  <p class="fw-bold mb-2">Catalie Portman enjoys Savory Salmon Puffs and Homestyle Beef Blend</p>
+                </div>
+                <!-- Slide 6 -->
+                <div class="carousel-item text-center">
+                  <img src="assets/media/cat6.jpg" class="img-fluid rounded-circle mb-4" alt="Nibbles the Cat" style="width: 200px; height: 200px;">
+                  <p class="fw-bold mb-2">Toaster is a fan of Gobble Goodness and Creamy Chicken Feast</p>
+                </div>
+                <!-- Slide 7 -->
+                <div class="carousel-item text-center">
+                  <img src="assets/media/cat7.jpg" class="img-fluid rounded-circle mb-4" alt="Fang the Cat" style="width: 200px; height: 200px;">
+                  <p class="fw-bold mb-2">Spaghetti O loves Whisker-Licking Chicken and Chunky Ocean Catch</p>
+                </div>
+                <!-- Slide 8 -->
+                <div class="carousel-item text-center">
+                  <img src="assets/media/cat8.jpg" class="img-fluid rounded-circle mb-4" alt="Shadow the Cat" style="width: 200px; height: 200px;">
+                  <p class="fw-bold mb-2">Vampyro enjoys Rustic Turkey Dinner and Crabby Crunch Puffs</p>
+                </div>
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#catFoodCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#catFoodCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+
+       
+
+        
+                  <!--     Dry Food Section       -->                  
+                  <section class="py-5">
+                    <h2 class="card-title fw-bold mb-4">Crispy, Crunchy, Cat-Approved.</h2>
+                    <h4 class="card-title mb-4">Boost Hydration and Flavor by Adding Our Cat Broth.</h4>
+                    <div class="container">
+                      <div class="row row-cols-1 row-cols-md-4 g-4">
+                        <!-- Card 1 -->
+                        <div class="col">
+                          <div class="card h-100 shadow-sm rounded-3 text-center">
+                            <img src="assets/media/packaging.jpg" class="card-img-top img-fluid p-3" alt="Cat Treat 1">
+                            <div class="card-body">
+                              <h5 class="fw-bold">Creamy Chicken Feast</h5>
+                              <h6 class="card-title text-muted">Tender chicken turned into a smooth, creamy delight. High in protein and hydration to keep your feline feeling their best.</h6>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="col">
+                          <div class="card h-100 shadow-sm rounded-3 text-center">
+                            <img src="assets/media/packaging.jpg" class="card-img-top img-fluid p-3" alt="Cat Treat 2">
+                            <div class="card-body">
+                              <h5 class="fw-bold">Rustic Turkey Dinner</h5>
+                              <h6 class="card-title text-muted">Ground turkey crafted into a hearty, textured recipe. Delicious and packed with protein for strong bones and muscles.</h6>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="col">
+                          <div class="card h-100 shadow-sm rounded-3 text-center">
+                            <img src="assets/media/packaging.jpg" class="card-img-top img-fluid p-3" alt="Cat Treat 3">
+                            <div class="card-body">
+                              <h5 class="fw-bold">Chunky Ocean Catch</h5>
+                              <h6 class="card-title text-muted">Ground fish and seafood blend for a flavor-packed meal with a satisfying texture. Supports joint health and hydration.</h6>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="col">
+                          <div class="card h-100 shadow-sm rounded-3 text-center">
+                            <img src="assets/media/packaging.jpg" class="card-img-top img-fluid p-3" alt="Cat Treat 4">
+                            <div class="card-body">
+                              <h5 class="fw-bold">Homestyle Beef Blend</h5>
+                              <h6 class="card-title text-muted">Ground beef with added nutrients for a wholesome, textured meal. Perfect for cats craving a more substantial bite.</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+
+                <!--     Add-ons Section       -->           
+                <section class="py-5">
+                  <h2 class="card-title fw-bold mb-4">Irresistible Add-ons</h2>
+                  <h4 class="card-title mb-4">Perfect Add-ons to Complete Every Meal.</h4>
+                  <div class="container">
+                    <div class="row row-cols-1 row-cols-md-4 g-4">
+                      <!-- Card 1 -->
+                      <div class="col">
+                        <div class="card h-100 shadow-sm rounded-3 text-center">
+                          <img src="assets/media/anchovy.jpg" class="card-img-top img-fluid p-3" alt="Cat Add-on 1">
+                          <div class="card-body">
+                            <h5 class="fw-bold">Dried Anchovies</h5>
+                            <h6 class="card-title text-muted">Crunchy, protein-packed anchovies that add a savory punch to your cat’s meal.</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Card 2 -->
+                      <div class="col">
+                        <div class="card h-100 shadow-sm rounded-3 text-center">
+                          <img src="assets/media/egg.jpg" class="card-img-top img-fluid p-3" alt="Cat Add-on 2">
+                          <div class="card-body">
+                            <h5 class="fw-bold">Dried Quail Egg</h5>
+                            <h6 class="card-title text-muted">A nutritious, bite-sized treat loaded with essential vitamins and minerals.</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Card 3 -->
+                      <div class="col">
+                        <div class="card h-100 shadow-sm rounded-3 text-center">
+                          <img src="assets/media/powder.jpg" class="card-img-top img-fluid p-3" alt="Cat Add-on 3">
+                          <div class="card-body">
+                            <h5 class="fw-bold">Bone Broth Powder</h5>
+                            <h6 class="card-title text-muted">A concentrated sprinkle packed with collagen and minerals to support joint health and hydration.</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Card 4 -->
+                      <div class="col">
+                        <div class="card h-100 shadow-sm rounded-3 text-center">
+                          <img src="assets/media/salmon.jpg" class="card-img-top img-fluid p-3" alt="Cat Add-on 4">
+                          <div class="card-body">
+                            <h5 class="fw-bold">Salmon Skin Crisps</h5>
+                            <h6 class="card-title text-muted">Light, crispy salmon skins that are rich in Omega-3s for a healthy, shiny coat.</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+
+<!--    MONEY BACK GUARANTEE    -->
+<section class="bg-light-green text-center py-5 rounded-3 mx-auto my-5" style="border: 2px solid black;">
+  <div class="container">
+      <h2 class="fw-bold mb-3">Money Back Guarantee</h2>
+      <p class="mb-4 text-muted">Nervous your cat won’t like Nibble? Trying our sampler is risk-free. We’ll refund you if your cats won’t eat it.</p>
+      <a href="#" class="btn fw-bold text-uppercase py-2 px-4 mb-3" style="background-color: #f9e26c; color: black; border: 2px solid black;">View Our Offer</a>
+      <p class="small text-muted"><a href="#" class="text-decoration-underline">Terms & Conditions</a></p>
+  </div>
+</section>
+
+</main>
+
+
+<footer class="text-center py-3" style="background-color: #f9e26c; border-top: 2px solid black;">
+  <p>&copy; 2025 Helena Markulin</p>
+</footer>
+</body>
+
+</html>

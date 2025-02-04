@@ -1,0 +1,64 @@
+.navbar-nav{
+    padding-left: 20%;
+  }
+
+  .banner {
+    height: 500px; /* Default height for larger screens */
+    position: relative;
+    background-color: #c1cbdc !important;
+    padding: 10%; /* Use percentage or fixed units like px, but not combined */
+    border-radius: 15px; /* Adjust the radius value for more or less rounding */
+    overflow: hidden; /* Ensures child elements, like the cat image, stay inside the rounded edges */
+    border: 2px solid black;
+  }
+  .banner-text {
+    position: absolute;
+    left: 5%;
+    top: 70%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+
+  .bg-light-green {
+    background-color: #d9e7c8; /* Light green background */
+  }
+  
+  section a.btn-warning {
+    background-color: #e9d55f; /* Custom yellow */
+    color: black;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  section a.btn-warning:hover {
+    background-color: #d4c152; /* Darker yellow on hover */
+  }
+  
+  section p.text-muted {
+    line-height: 1.6; /* Adjust paragraph spacing */
+  }
+  
+  
+  @media (max-width: 768px) {
+    .card-image {
+      height: 150px; /* Adjust image height for smaller screens */
+    }
+    .customizable-bowl-section .btn {
+      margin-bottom: 20px; /* Add more space below the button */
+    }
+    .customizable-bowl-section .btn {
+      margin-bottom: 30px; /* Add more spacing below the button on mobile */
+    }
+  }
+
+
+  @media (max-width: 768px) { /* Target screens smaller than 768px (mobile) */
+    .banner {
+        background-color: #c1cbdc !important;
+        height: 300px;
+    }
+    .banner-text {
+        top: 50%;
+    }
+  }
