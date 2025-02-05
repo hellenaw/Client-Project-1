@@ -10,7 +10,7 @@ export class ImageModel {
      * Object mapping selections to corresponding overlay image paths.
      * @type {Object.<string, string>}
      */
-      this.overlays = {
+      this.overlays = { // keys are option names, paths are values
         wet: '../assets/media/food-wet.png',
         dry: '../assets/media/food-dry.png',
         chicken: '../assets/media/broth2.png',
@@ -27,5 +27,10 @@ export class ImageModel {
   
     getOverlays(selections) {
       return selections.map(selection => this.overlays[selection]).filter(src => src);
+      //this method takes selections array from controller
+      //and loops through selectios, and looks up image path for each item in selections
+
+      //filter(src=>src) Removes any undefined or empty values.
+      // This is useful if the user didn’t select an option that maps to an image.
     }
   }

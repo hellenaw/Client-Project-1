@@ -11,6 +11,9 @@ export class ImageView {
      * @type {HTMLElement}
      */
       this.bowlContainer = document.querySelector('.bowl-container');
+    // 	•	What it does: Finds the .bowl-container element in your HTML.
+	  //Why: This is where all the overlay images 
+    //(like food, broth, etc.) will be displayed on top of the bowl.
     }
       /**
    * Removes all existing overlay images from the bowl container.
@@ -19,7 +22,11 @@ export class ImageView {
     clearOverlays() {
       const overlays = this.bowlContainer.querySelectorAll('.overlay-image');
       overlays.forEach(overlay => overlay.remove());
-    }
+    } //	•	What it does: Removes all existing overlay images from the bowl.
+    //•	How:
+    //•	It finds all images with the class .overlay-image.
+    //•	It loops through them using forEach and removes each one.
+    
       /**
    * Adds an overlay image on top of the bowl image.
    * @param {string} src - The source path of the overlay image.
