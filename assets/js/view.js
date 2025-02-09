@@ -1,72 +1,80 @@
 /**
- * View class responsible for rendering overlay images on the bowl.
+ * Handles the rendering of dynamic selections and overlay images in the view.
  */
 export class ImageView {
-    /**
-   * Initializes the view and selects the bowl container element.
-   */
-    constructor() {
-          /**
-     * The container where overlay images are displayed.
-     * @type {HTMLElement}
+      /**
+     * Initializes the view by selecting necessary DOM elements.
      */
+  constructor() {
+            /**
+         * The container where overlay images are displayed.
+         * @type {HTMLElement}
+         */
       this.bowlContainer = document.querySelector('.bowl-container');
-    // 	•	What it does: Finds the .bowl-container element in your HTML.
-	  //Why: This is where all the overlay images 
-    //(like food, broth, etc.) will be displayed on top of the bowl.
-    }
-      /**
-   * Removes all existing overlay images from the bowl container.
-   */
-  
-    clearOverlays() {
-      const overlays = this.bowlContainer.querySelectorAll('.overlay-image');
-      overlays.forEach(overlay => overlay.remove());
-    } //	•	What it does: Removes all existing overlay images from the bowl.
-    //•	How:
-    //•	It finds all images with the class .overlay-image.
-    //•	It loops through them using forEach and removes each one.
-    
-      /**
-   * Adds an overlay image on top of the bowl image.
-   * @param {string} src - The source path of the overlay image.
-   */
-  
-    addOverlay(src) {
-      if (this.bowlContainer && src) {
-        const img = document.createElement('img');
-        img.src = src;
-        img.classList.add('position-absolute', 'overlay-image');
-        img.style.top = '0';
-        img.style.left = '0';
-        img.style.width = '100%';
-        img.style.height = '100%';
-        img.style.objectFit = 'contain';
-        this.bowlContainer.appendChild(img);
-      }
-    }
+              /**
+         * An array storing dynamically created select elements.
+         * @type {HTMLSelectElement[]}
+         */
+      this.selects = [];
+  }
     /**
-   * Updates the overlays by clearing existing ones and adding new images.
-   * @param {string[]} images - An array of image paths to be displayed as overlays.
-   */
-    updateOverlays(images) {
+     * Creates and inserts a new dropdown (`<select>`) element dynamically.
+     * @param {string} selectID - The ID for the select element.
+     * @param {Array<{value: string, label: string}>} options - The available options for selection.
+     */
+  createSelect(selectID, options) {
+      let selectsDiv = document.querySelector("#dynamic-selects");
+
+      selectsDiv.insertAdjacentHTML("beforeend", `
+          <div class="mb-4">
+              <label for="${selectID}" class="form-label fw-bold">${selectID.charAt(0).toUpperCase() + selectID.slice(1)}</label>
+              <select id="${selectID}" class="form-select">
+                  <option value="">Choose ${selectID}</option>
+              </select>
+          </div>
+      `);
+
+      let select = document.getElementById(selectID);
+      options.forEach(option => {
+          select.insertAdjacentHTML("beforeend",
+              `<option value="${option.value}">${option.label}</option>`);
+      });
+
+      this.selects.push(select);
+  }
+    /**
+     * Updates the displayed overlay images based on user selections.
+     * @param {string[]} images - An array of image source paths to be displayed.
+     */
+  updateOverlays(images) {
       this.clearOverlays();
       images.forEach(src => this.addOverlay(src));
 
-      //debugging:
-    //   console.log("Updating View with images:", images);
-    //   images.forEach(src => {
-    //     console.log("Adding overlay image:", src); // ✅ Check each image being added
-    //     this.addOverlay(src);
-    // });
-
-    }
-
-    getSelections() {
-      const foodType = document.querySelector('input[name="foodType"]:checked')?.value;
-      const broth = document.getElementById('broth').value;
-      const foodFormula = document.getElementById('foodFormula').value;
-      return [foodType, broth, foodFormula].filter(Boolean); // Remove empty values
+      console.log("Updating View with images:", images);
   }
 
+    /**
+     * Removes all existing overlay images from the bowl container.
+     */
+  clearOverlays() {
+      const overlays = this.bowlContainer.querySelectorAll('.overlay-image');
+      overlays.forEach(overlay => overlay.remove());
   }
+    /**
+     * Adds a new overlay image to the bowl container.
+     * @param {string} src - The source path of the overlay image.
+     */
+  addOverlay(src) {
+      if (this.bowlContainer && src) {
+          const img = document.createElement('img');
+          img.src = src;
+          img.classList.add('position-absolute', 'overlay-image');
+          img.style.top = '0';
+          img.style.left = '0';
+          img.style.width = '100%';
+          img.style.height = '100%';
+          img.style.objectFit = 'contain';
+          this.bowlContainer.appendChild(img);
+      }
+  }
+}
