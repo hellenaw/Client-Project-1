@@ -6,11 +6,7 @@ import { ImageController } from './controller.js';
  * Initializes the MVC components when the DOM is fully loaded.
  */
 
-document.addEventListener('DOMContentLoaded', () => { // DOMContentLoaded is an event in JavaScript 
-//that fires when the HTML has been completely loaded and parsed by the browser, 
-//but before images, stylesheets, and other resources are fully loaded.
-//This ensures that things like #bowl-builder-form and .bowl-container
-//exist in the DOM when JavaScript tries to interact with them.
+document.addEventListener('DOMContentLoaded', () => { // event in JavaScript 
 // “Hold on until the page structure is ready, then do your thing.”
   const model = new ImageModel();
   const view = new ImageView();

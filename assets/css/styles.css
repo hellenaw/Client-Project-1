@@ -1,3 +1,8 @@
+body {
+  margin-top: 10%;
+  background-color: #f9e26c !important;
+}
+
 .navbar-nav{
     padding-left: 20%;
   }

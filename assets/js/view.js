@@ -52,5 +52,21 @@ export class ImageView {
     updateOverlays(images) {
       this.clearOverlays();
       images.forEach(src => this.addOverlay(src));
+
+      //debugging:
+    //   console.log("Updating View with images:", images);
+    //   images.forEach(src => {
+    //     console.log("Adding overlay image:", src); // ✅ Check each image being added
+    //     this.addOverlay(src);
+    // });
+
     }
+
+    getSelections() {
+      const foodType = document.querySelector('input[name="foodType"]:checked')?.value;
+      const broth = document.getElementById('broth').value;
+      const foodFormula = document.getElementById('foodFormula').value;
+      return [foodType, broth, foodFormula].filter(Boolean); // Remove empty values
+  }
+
   }
