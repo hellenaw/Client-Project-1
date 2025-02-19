@@ -48,20 +48,24 @@ export class CheckoutView {
     }
 
     // Render cart selections
+
     renderCheckout(selections, total) {
+        console.log("🖥 Rendering checkout with:", selections, total);
         if (!selections || Object.keys(selections).length === 0) {
             this.checkoutSummary.innerHTML = "<p>Your cart is empty.</p>";
             return;
         }
 
         let checkoutHTML = "<h3 class='fw-bold'>Your Custom Bowl:</h3><ul class='list-group'>";
-        Object.values(selections).forEach(item => {
-            if (typeof item === "string" && item !== "undefined") {
-                checkoutHTML += `<li class="list-group-item">${item}</li>`;
+        
+        // ✅ No need to fetch labels—controller already provides them!
+        Object.values(selections).forEach(label => {
+            if (typeof label === "string" && label !== "undefined") {
+                checkoutHTML += `<li class="list-group-item">${label}</li>`;
             }
         });
-        checkoutHTML += `</ul><p class='fw-bold mt-3'>Total Price: $${total}</p>`;
 
+        checkoutHTML += `</ul><p class='fw-bold mt-3'>Total Price: $${total}</p>`;
         this.checkoutSummary.innerHTML = checkoutHTML;
     }
 
@@ -77,12 +81,19 @@ export class CheckoutView {
     clearError(fieldId) {
         const input = document.getElementById(fieldId);
         const errorMessage = document.getElementById(`${fieldId}-error`);
+    
+        if (!input || !errorMessage) {
+            console.warn(`⚠️ clearError: Element not found for fieldId: ${fieldId}`);
+            return; // Exit function if element doesn't exist
+        }
+    
         input.classList.remove("is-invalid");
         errorMessage.textContent = "";
     }
 
     // Show success message
     showSuccessMessage(name) {
+        console.log("🎉 showSuccessMessage triggered!"); // Debugging
         this.checkoutSummary.innerHTML = `<p class='fw-bold text-success'>Thank you, ${name}! Your order has been placed. 🎉</p>`;
     }
 }

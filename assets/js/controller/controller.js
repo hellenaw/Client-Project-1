@@ -44,6 +44,7 @@ export class ImageController {
       const selections = this.model.getValues();
       this.view.updateOverlays(selections); // Pass selections directly
 
+      console.log("💾 Saving selections:", this.model);
       //  Save selections to Local Storage
       localStorage.setItem("bowlSelections", JSON.stringify(this.model));
   };
