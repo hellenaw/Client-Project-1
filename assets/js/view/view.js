@@ -11,6 +11,11 @@ export class ImageView {
          * @type {HTMLElement}
          */
       this.bowlContainer = document.querySelector('.bowl-container');
+
+    //It selects the HTML element with the class bowl-container.
+	//It assigns this selected element to this.bowlContainer, 
+    //making it accessible inside the ImageView class.
+
               /**
          * An array storing dynamically created select elements.
          * @type {HTMLSelectElement[]}
@@ -23,8 +28,11 @@ export class ImageView {
      * @param {Array<{value: string, label: string}>} options - The available options for selection.
      */
   createSelect(selectID, options) {
-      let selectsDiv = document.querySelector("#dynamic-selects");
+      let selectsDiv = document.querySelector("#dynamic-selects"); //find container for select
 
+
+      //inserts new select
+      //${selectID} is the unique identifier (e.g., foodType, broth, foodFormula).
       selectsDiv.insertAdjacentHTML("beforeend", `
           <div class="mb-4">
               <label for="${selectID}" class="form-label fw-bold">${selectID.charAt(0).toUpperCase() + selectID.slice(1)}</label>
@@ -34,6 +42,8 @@ export class ImageView {
           </div>
       `);
 
+
+      //populate dropdown with option
       let select = document.getElementById(selectID);
       options.forEach(option => {
           select.insertAdjacentHTML("beforeend",
@@ -46,13 +56,17 @@ export class ImageView {
      * Updates the displayed overlay images based on user selections.
      * @param {string[]} images - An array of image source paths to be displayed.
      */
-  updateOverlays(images) {
-      this.clearOverlays();
-      images.forEach(src => this.addOverlay(src));
+    updateOverlays(selections) {
+        this.clearOverlays();
+        console.log("ImageView initialized");
 
-      console.log("Updating View with images:", images);
-  }
-
+        if (selections.length === 0) return;
+    
+        selections.forEach((selection) => {
+            let imgSrc = `assets/media/${selection}.png`; // Use individual images
+            this.addOverlay(imgSrc);
+        });
+    }
     /**
      * Removes all existing overlay images from the bowl container.
      */

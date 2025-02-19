@@ -11,6 +11,7 @@ export class ImageController {
   constructor(model, view) {
       this.model = model;
       this.view = view;
+      console.log("ImageController initialized");
 
         /**
          * Retrieve property names from the model to dynamically generate selection elements.
@@ -35,12 +36,15 @@ export class ImageController {
      * Handles user selection changes, updates the model, and refreshes the view.
      * @param {Event} event - The event object triggered by a change in selection.
      */
-  handleSelectChange = (event) => {
+    handleSelectChange = (event) => {
       let select = event.target;
 
       this.model[select.id] = select.value;
-
+  
       const selections = this.model.getValues();
-      this.view.updateOverlays(this.model.getOverlays(selections));
+      this.view.updateOverlays(selections); // Pass selections directly
+
+      //  Save selections to Local Storage
+      localStorage.setItem("bowlSelections", JSON.stringify(this.model));
   };
 }
