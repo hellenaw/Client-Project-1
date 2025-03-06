@@ -6,34 +6,40 @@ import { CheckoutModel } from "./model/CheckoutModel.js";
 import { CheckoutView } from "./view/CheckoutView.js";
 import { CheckoutController } from "./controller/CheckoutController.js";
 
-console.log("✅ app.js loaded"); // Debugging
-
 /**
- * Initializes the application once the DOM is fully loaded.
+ * Main application class that initializes controllers based on the current page.
  */
-document.addEventListener('DOMContentLoaded', () => { 
-    console.log("✅ DOM Content Loaded"); // Debugging
+class App {
+    /**
+     * Detects the current page and initializes the appropriate MVC structure.
+     */
+    constructor() {
+        console.log("App is starting...");
 
-    let url = window.location.href;
-    let pageMatch = url.match(/[a-zA-Z-]+.html/); // Detects the current page
+        let url = window.location.href; // retrieve full URL
+        let pageMatch = url.match(/[a-zA-Z-]+.html/); // Ensures it matches pattern
 
-    if (pageMatch) {
-        let page = pageMatch[0];
-        console.log("✅ Current Page Detected:", page); // Debugging
+        if (pageMatch) {
+            let page = pageMatch[0]; // Extracts the matched page name
+            console.log("Current Page Detected:", page); // Debugging
 
-        switch (page) {
-            case "build-a-bowl.html":
-                console.log("✅ Initializing Build-a-Bowl MVC");
-                new ImageController(new ImageModel(), new ImageView());
-                break;
-            case "checkout.html":
-                console.log("✅ Initializing Checkout MVC");
-                new CheckoutController(new CheckoutModel(), new CheckoutView());
-                break;
-            default:
-                console.log("⚠️ No matching MVC found for this page.");
+            switch (page) {
+                case "build-a-bowl.html":
+                    console.log("Initializing Build-a-Bowl MVC");
+                    new ImageController(new ImageModel(), new ImageView());
+                    break;
+                case "checkout.html":
+                    console.log("Initializing Checkout MVC");
+                    new CheckoutController(new CheckoutModel(), new CheckoutView());
+                    break;
+                default:
+                    console.log("No matching MVC found for this page.");
+            }
+        } else {
+            console.log("⚠️ No HTML page detected in URL.");
         }
-    } else {
-        console.log("⚠️ No HTML page detected in URL.");
     }
-});
+}
+
+// Instantiate the application
+new App();

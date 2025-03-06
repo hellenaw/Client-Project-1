@@ -13,7 +13,19 @@ export const selectData = {
     ]
 };
 
-// ✅ Ensure this is exported correctly
+export const prices = {
+    wet: 3.99,
+    dry: 2.99,
+    chicken: 1.99,
+    salmon: 2.49,
+    driedAnchovy: 1.49,
+    quailEggYolks: 2.29
+};
+
+
+
+//id acts as the unique identifier for the input field.
+//it allows JavaScript to find and manipulate the field using document.getElementById("name").
 export const checkoutFields = [
     { id: "name", label: "Full Name", type: "text", placeholder: "Enter your full name" },
     { id: "email", label: "Email", type: "email", placeholder: "Enter your email" },
@@ -21,3 +33,5 @@ export const checkoutFields = [
     { id: "address", label: "Address", type: "text", placeholder: "Enter your shipping address" },
     { id: "credit-card", label: "Credit Card Number", type: "text", placeholder: "XXXX-XXXX-XXXX-XXXX" }
 ];
+
+//The label is used to describe the input field.

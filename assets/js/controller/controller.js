@@ -9,20 +9,26 @@ export class ImageController {
      * @param {ImageView} view - The view responsible for rendering dynamic selections and overlays.
      */
   constructor(model, view) {
+            /**
+         * @property {ImageModel} model - The data model containing selection and overlay data.
+         */
       this.model = model;
+              /**
+         * @property {ImageView} view - The view responsible for rendering UI elements.
+         */
       this.view = view;
       console.log("ImageController initialized");
-
         /**
          * Retrieve property names from the model to dynamically generate selection elements.
          * Each property corresponds to a selectable category (e.g., foodType, broth).
          */
       let properties = this.model.getProperties();
-              /**
+        /**
          * Creates selection dropdowns dynamically in the view using model data.
          */
       properties.forEach((property) => {
-          this.view.createSelect(property, this.model.getOptions(property));
+        const categoryLabel = this.model.getCategoryLabel(property); // Convert key to readable text
+        this.view.createSelect(property, categoryLabel, this.model.getOptions(property));
       });
         /**
          * Registers event listeners for selection changes.
@@ -40,12 +46,20 @@ export class ImageController {
       let select = event.target;
 
       this.model[select.id] = select.value;
-  
+          /**
+         * Retrieves selected values from the model.
+         * @type {string[]}
+         */
       const selections = this.model.getValues();
-      this.view.updateOverlays(selections); // Pass selections directly
+              /**
+         * Maps selected values to their corresponding image paths.
+         * @type {string[]}
+         */
+      const imagePaths = selections.map(selection => this.model.getImagePath(selection));
+      this.view.updateOverlays(imagePaths); // Pass selections directly
 
-      console.log("💾 Saving selections:", this.model);
-      //  Save selections to Local Storage
-      localStorage.setItem("bowlSelections", JSON.stringify(this.model));
+      console.log("Saving selections:", this.model);
+      //call local storage method from model
+      this.model.storeSelections();
   };
 }

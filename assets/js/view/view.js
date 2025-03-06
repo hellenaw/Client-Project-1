@@ -6,44 +6,35 @@ export class ImageView {
      * Initializes the view by selecting necessary DOM elements.
      */
   constructor() {
-            /**
-         * The container where overlay images are displayed.
-         * @type {HTMLElement}
+        /**
+         * @property {HTMLElement} bowlContainer - The container where overlay images are displayed.
          */
       this.bowlContainer = document.querySelector('.bowl-container');
 
-    //It selects the HTML element with the class bowl-container.
-	//It assigns this selected element to this.bowlContainer, 
-    //making it accessible inside the ImageView class.
-
-              /**
-         * An array storing dynamically created select elements.
-         * @type {HTMLSelectElement[]}
+        /**
+         * @property {HTMLSelectElement[]} selects - An array storing dynamically created select elements.
          */
       this.selects = [];
   }
     /**
      * Creates and inserts a new dropdown (`<select>`) element dynamically.
      * @param {string} selectID - The ID for the select element.
+     * @param {string} categoryLabel - The user-friendly label for the category.
      * @param {Array<{value: string, label: string}>} options - The available options for selection.
      */
-  createSelect(selectID, options) {
-      let selectsDiv = document.querySelector("#dynamic-selects"); //find container for select
+  createSelect(selectID, categoryLabel, options) {
+      let selectsDiv = document.querySelector("#dynamic-selects");
 
-
-      //inserts new select
-      //${selectID} is the unique identifier (e.g., foodType, broth, foodFormula).
       selectsDiv.insertAdjacentHTML("beforeend", `
           <div class="mb-4">
-              <label for="${selectID}" class="form-label fw-bold">${selectID.charAt(0).toUpperCase() + selectID.slice(1)}</label>
+              <label for="${selectID}" class="form-label fw-bold">${categoryLabel}</label>
               <select id="${selectID}" class="form-select">
-                  <option value="">Choose ${selectID}</option>
+                  <option value="">Choose ${categoryLabel}</option>
               </select>
           </div>
       `);
 
 
-      //populate dropdown with option
       let select = document.getElementById(selectID);
       options.forEach(option => {
           select.insertAdjacentHTML("beforeend",
@@ -54,16 +45,15 @@ export class ImageView {
   }
     /**
      * Updates the displayed overlay images based on user selections.
-     * @param {string[]} images - An array of image source paths to be displayed.
+     * @param {string[]} imagePaths - An array of image source paths to be displayed.
      */
-    updateOverlays(selections) {
+    updateOverlays(imagePaths) {
         this.clearOverlays();
         console.log("ImageView initialized");
 
-        if (selections.length === 0) return;
+        if (imagePaths.length === 0) return;
     
-        selections.forEach((selection) => {
-            let imgSrc = `assets/media/${selection}.png`; // Use individual images
+        imagePaths.forEach((imgSrc) => {
             this.addOverlay(imgSrc);
         });
     }

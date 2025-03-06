@@ -1,17 +1,12 @@
-import { checkoutFields, selectData } from "../data/data.js"; // ✅ Add selectData
+import { checkoutFields, selectData, prices } from "../data/data.js"; // Add selectData
 
 export class CheckoutModel {
     constructor() {
-        console.log("📦 Retrieved selections from storage:", this.selections);
+
+        //retrieves user selections
+        console.log("Retrieved selections from storage:", this.selections);
         this.selections = JSON.parse(localStorage.getItem("bowlSelections")) || {};
-        this.prices = {
-            wet: 3.99,
-            dry: 2.99,
-            chicken: 1.99,
-            salmon: 2.49,
-            driedAnchovy: 1.49,
-            quailEggYolks: 2.29
-        };
+
     }
 
     getLabelForValue(value) {
@@ -21,40 +16,47 @@ export class CheckoutModel {
         }
         return value; // Default: return the value if no label is found
     }
+    isCartEmpty() {
+        return !this.selections || Object.keys(this.selections).length === 0;
+    }
 
     /**
-     * ✅ Convert all selections to labels before displaying them in checkout
+     * Convert all selections to labels before displaying them in checkout
      */
     getSelectionsWithLabels() {
-        let labeledSelections = {};
-        Object.keys(this.selections).forEach(key => {
-            labeledSelections[key] = this.getLabelForValue(this.selections[key]); // Convert value to label
+        let labeledSelections = {}; //create map
+        Object.keys(this.selections).forEach(key => { //mapping keys to labels
+            labeledSelections[key] = this.getLabelForValue(this.selections[key]);
         });
-        console.log("🔍 Converted selections to labels:", labeledSelections);
-        return labeledSelections;
+        console.log("Converted selections to labels:", labeledSelections);
+        return labeledSelections; //display labels to user, not values js will store
     }
 
     calculateTotal() {
-        return Object.values(this.selections)
-            .filter(item => item !== "undefined")
-            .reduce((total, item) => total + (this.prices[item] || 0), 0)
-            .toFixed(2);
+        return Object.values(this.selections) // selections contains user choices in local storage
+            .filter(item => item !== "undefined") //ensures no undefined values are included
+            .reduce((total, item) => total + (prices[item] || 0), 0) 
+            //reduce() iterates over the selection list and adds up the prices from the prices object
+            // "|| 0" defaults to 0
+            .toFixed(2); // rounds to two decimal places
+            // returns String
     }
 
     getCheckoutFields() {
         return checkoutFields;
     }
 
-    // ✅ Store checkout data
+    // Store checkout data
     storeCheckoutData(data) {
-        localStorage.setItem("checkoutData", JSON.stringify(data));
+        localStorage.setItem("checkoutData", JSON.stringify(data)); //LOCAL STORAGE
     }
-    validateNotEmpty(value) {
+    validateNotEmpty(value) { // return true if no errors
         return value.trim() !== "";
     }
 
     validateEmail(value) {
-        return value.includes("@") && value.includes(".");
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(value);
     }
 
     validatePhone(value) {
@@ -67,10 +69,10 @@ export class CheckoutModel {
         return cardPattern.test(value);
     }
 
-    // ✅ Perform all validations and return error messages (if any)
+    // Perform all validations and return error messages (if any)
     validateCheckoutData(data) {
-        const errors = {};
-
+        const errors = {}; // store errors in object
+        //error message if not true
         if (!this.validateNotEmpty(data.name)) errors.name = "This field is required.";
         if (!this.validateEmail(data.email)) errors.email = "Enter a valid email (e.g., user@example.com).";
         if (!this.validatePhone(data.phone)) errors.phone = "Format: 123-4567.";

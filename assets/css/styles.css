@@ -3,6 +3,44 @@ body {
   background-color: #f9e26c !important;
 }
 
+
+.unsupported-page {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 50px;
+}
+
+.unsupported-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
+}
+
+.unsupported-container h1 {
+  color: #d9534f;
+}
+
+.unsupported-container p {
+  color: #555;
+}
+
+.unsupported-container .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 15px;
+  background: #0275d8;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.unsupported-container .btn:hover {
+  background: #025aa5;
+}
 .navbar-nav{
     padding-left: 20%;
   }
