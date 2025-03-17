@@ -70,7 +70,7 @@ export class ImageModel {
      * @returns {string} - The image file path.
      */
     getImagePath(selection) {
-        return `assets/media/${selection}.png`;
+        return `https://hellenaw.github.io/client-project-1/assets/media/${selection}.png`;
     }
 
     updateSelection(category, value) {
