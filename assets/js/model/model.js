@@ -72,6 +72,12 @@ export class ImageModel {
     getImagePath(selection) {
         return `assets/media/${selection}.png`;
     }
+
+    updateSelection(category, value) {
+        if (this.options.hasOwnProperty(category)) {
+            this[category] = value;
+        }
+    }
     /**
      * Loads saved selections from local storage and restores them to the model.
      */

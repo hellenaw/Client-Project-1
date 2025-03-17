@@ -45,7 +45,7 @@ export class ImageController {
     handleSelectChange = (event) => {
       let select = event.target;
 
-      this.model[select.id] = select.value;
+        this.model.updateSelection(select.id, select.value);
           /**
          * Retrieves selected values from the model.
          * @type {string[]}
